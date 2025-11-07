@@ -16,12 +16,13 @@ import {
   MessageContainerHeading,
   MessageContainerText,
   MessageFlexContainer,
+  MessageMainContainer,
   RadioContainer,
   RadioContainers,
   TopForm,
 } from "./styles";
 import { useState } from "react";
-
+import CheckIcon from "../../assets/icons/icon-success-check.svg";
 const Main = () => {
   const {
     register,
@@ -41,6 +42,9 @@ const Main = () => {
   function submit() {
     reset();
     setOpen(true);
+  }
+  function handleClose() {
+    setOpen(false);
   }
   const [open, setOpen] = useState(false);
 
@@ -145,14 +149,17 @@ const Main = () => {
         </Form>
       </InnerContainer>
       {open && (
-        <MessageContainer>
-          <MessageFlexContainer>
-            <MessageContainerHeading>Message Sent!</MessageContainerHeading>
-          </MessageFlexContainer>
-          <MessageContainerText>
-            Thanks for completing the form. We’ll be in touch soon!
-          </MessageContainerText>
-        </MessageContainer>
+        <MessageMainContainer onClick={handleClose}>
+          <MessageContainer>
+            <MessageFlexContainer>
+              <CheckIcon />
+              <MessageContainerHeading>Message Sent!</MessageContainerHeading>
+            </MessageFlexContainer>
+            <MessageContainerText>
+              Thanks for completing the form. We’ll be in touch soon!
+            </MessageContainerText>
+          </MessageContainer>
+        </MessageMainContainer>
       )}
     </MainContainer>
   );
