@@ -15,12 +15,10 @@ export const StyledInput = styled.input<InputProps>`
   font-size: 18px;
   line-height: 150%;
   cursor: pointer;
-
   &:focus {
     border: 1.5px solid ${colors.secondary02};
     outline: none;
   }
-
   &:hover {
     border: 1.5px solid ${colors.secondary02};
   }

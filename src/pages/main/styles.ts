@@ -105,6 +105,16 @@ export const MessageArea = styled.textarea<InputProps>`
   padding: 12px 18px;
 `;
 
+export const MessageMainContainer = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+`;
+
 export const MessageContainer = styled.div`
   position: absolute;
   top: 10px;
@@ -117,7 +127,7 @@ export const MessageContainer = styled.div`
 
 export const MessageFlexContainer = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 8px;
   align-items: center;
 `;
 export const MessageContainerHeading = styled.div`
